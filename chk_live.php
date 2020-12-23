@@ -80,7 +80,7 @@ switch($message){
 				$error_message = GetStr($pagamento, '"message":"','"');
 
 
-				sendMessage($chatId, $error_message);
+				sendMessage($chatId, $pagamento);
 			}
 		}
 		else{
