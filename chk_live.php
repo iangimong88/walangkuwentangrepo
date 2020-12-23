@@ -18,8 +18,16 @@ switch($message){
 		sendMessage($chatId, "Maligayang pagdating sa aking bot. Ito ay para sa mga jolly batibot.");
 		break;
 	case strpos($message, "/test") !== false:
-		$cc = str_ireplace("/test","",$message);
-		sendMessage($chatId, $cc);
+		$string = str_ireplace("/test","",$message);
+		switch($string){
+			case is_numeric($string) === true:
+				sendMessage($chatId, "numeric.");
+				break;
+			default;
+				sendMessage($chatId, "non numeric.");
+		}
+		
+		
 		break;
 	default:
 		sendMessage($chatId, "Hindi kita maunawaan.");
