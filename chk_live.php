@@ -19,7 +19,7 @@ switch($message){
 		break;
 	case strpos($message, "/test") !== false:
 		$string = str_ireplace("/test","",$message);
-		$replace = preg_replace('/\s+/', '', $string);
+		$replace = preg_replace('/\s+[^A-Za-z0-9\-]/', '', $string);
 		sendMessage($chatId, $replace);
 		
 		
