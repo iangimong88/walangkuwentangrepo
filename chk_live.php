@@ -18,6 +18,8 @@ switch($message){
 		sendMessage($chatId, "Maligayang pagdating sa aking bot. Ito ay para sa mga jolly batibot.");
 		break;
 	case strpos($message, "/test") !== false:
+		$string = str_ireplace("/test", "", $message);
+		
 		$filtered_string = preg_replace('/[^0-9\n|\-]/', '', $string);
 		if(preg_match('/[^0-9\n|\-]/', $string) !== false){
 			sendMessage($chatId, $filtered_string);
