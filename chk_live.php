@@ -10,7 +10,6 @@ $botUrl = "https://api.telegram.org/bot".$botToken;
 $update = file_get_contents("php://input");
 $data = json_decode($update, TRUE);
 
-echo $$data;
 $chatId = $data["message"]["chat"]["id"];
 $message = $data["message"]["text"];
 
@@ -19,7 +18,7 @@ switch($message){
 		sendMessage($chatId, "Maligayang pagdating sa aking bot. Ito ay para sa mga jolly batibot.");
 		break;
 	case "/test":
-		sendMessage($chatId, "This is test.");
+		sendMessage($chatId, $data);
 		break;
 	default:
 		sendMessage($chatId, "Hindi kita maunawaan.");
