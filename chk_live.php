@@ -44,8 +44,8 @@ switch($message){
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 				curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-				curl_setopt($ch, CURLOPT_COOKIEFILE, $GLOBALS["botUrl"].'/cookie.txt');
-				curl_setopt($ch, CURLOPT_COOKIEJAR, $GLOBALS["botUrl"].'/cookie.txt');
+				curl_setopt($ch, CURLOPT_COOKIEFILE, $botUrl.'/cookie.txt');
+				curl_setopt($ch, CURLOPT_COOKIEJAR, $botUrl.'/cookie.txt');
 				    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 				'Accept:*/*',
 				'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjIwMTgwNDI2MTYtcHJvZHVjdGlvbiIsImlzcyI6Imh0dHBzOi8vYXBpLmJyYWludHJlZWdhdGV3YXkuY29tIn0.eyJleHAiOjE2MDg3OTY3OTUsImp0aSI6IjdmOGMzMDk2LTI3ZWUtNDI1MS04NzYwLTQ3NzlhOTg3MmRiZSIsInN1YiI6InRoaHZ6YmpzMm1nbnJ6ZHoiLCJpc3MiOiJodHRwczovL2FwaS5icmFpbnRyZWVnYXRld2F5LmNvbSIsIm1lcmNoYW50Ijp7InB1YmxpY19pZCI6InRoaHZ6YmpzMm1nbnJ6ZHoiLCJ2ZXJpZnlfY2FyZF9ieV9kZWZhdWx0IjpmYWxzZX0sInJpZ2h0cyI6WyJtYW5hZ2VfdmF1bHQiXSwic2NvcGUiOlsiQnJhaW50cmVlOlZhdWx0Il0sIm9wdGlvbnMiOnsibWVyY2hhbnRfYWNjb3VudF9pZCI6Imdsb3J5dGVjaGxsY19pbnN0YW50In19.IFhQplOdUpCQ6e7Ue8W5nTB25n6O9VteTya2RpTVA8uTZ7ig_HDupSf7jRuJQ-VD2ba89BZhZZV0N5yofpUlfA',
@@ -68,8 +68,8 @@ switch($message){
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 				curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-				curl_setopt($ch, CURLOPT_COOKIEFILE, $GLOBALS["botUrl"].'/cookie.txt');
-				curl_setopt($ch, CURLOPT_COOKIEJAR, $GLOBALS["botUrl"].'/cookie.txt');
+				curl_setopt($ch, CURLOPT_COOKIEFILE, $botUrl.'/cookie.txt');
+				curl_setopt($ch, CURLOPT_COOKIEJAR, $botUrl.'/cookie.txt');
 				   curl_setopt($ch, CURLOPT_HTTPHEADER, array(   
 				'accept: */*',
 				'content-type: application/json',
