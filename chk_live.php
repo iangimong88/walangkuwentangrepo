@@ -19,7 +19,8 @@ switch($message){
 		break;
 	case strpos($message, "/test") !== false:
 		$filtered_string = preg_replace('/[^0-9\n|\-]/', '', $string);
-		if(preg_replace('/[^0-9\n|\-]/', '', $string)){
+		preg_match('/[^0-9\n|\-]/', $filtered_string, $matches);
+		if($matches){
 			sendMessage($chatId, $filtered_string);
 		}
 		else{
