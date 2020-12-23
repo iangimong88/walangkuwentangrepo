@@ -19,13 +19,8 @@ switch($message){
 		break;
 	case strpos($message, "/test") !== false:
 		$string = str_ireplace("/test","",$message);
-		switch($string){
-			case is_numeric($string) === true:
-				sendMessage($chatId, "numeric.");
-				break;
-			default;
-				sendMessage($chatId, "non numeric.");
-		}
+		$string = preg_replace('/\s+/', '', $string);
+		sendMessage($chatId, $string);
 		
 		
 		break;
