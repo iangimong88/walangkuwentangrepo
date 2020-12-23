@@ -17,8 +17,9 @@ switch($message){
 	case "/start":
 		sendMessage($chatId, "Maligayang pagdating sa aking bot. Ito ay para sa mga jolly batibot.");
 		break;
-	case "/test":
-		sendMessage($chatId, echo $data);
+	case strpos($message, "/test") !== false:
+		$cc = str_ireplace("/test","",$message);
+		sendMessage($chatId, $cc);
 		break;
 	default:
 		sendMessage($chatId, "Hindi kita maunawaan.");
@@ -27,6 +28,12 @@ switch($message){
 function sendMessage($chatId, $message){
 	$url = $GLOBALS["botUrl"]."/sendMessage?chat_id=" .$chatId. "&text=" .urlencode($message);
 	file_get_contents($url);
+}
+
+function GetStr($string, $start, $end){
+    $str = explode($start, $string);
+    $str = explode($end, $str[1]);
+    return $str[0];
 }
 
 ?>
