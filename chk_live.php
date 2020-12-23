@@ -10,6 +10,7 @@ $botUrl = "https://api.telegram.org/bot".$botToken;
 $update = file_get_contents("php://input");
 $data = json_decode($update, TRUE);
 
+echo $$data;
 $chatId = $data["message"]["chat"]["id"];
 $message = $data["message"]["text"];
 
