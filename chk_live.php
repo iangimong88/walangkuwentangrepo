@@ -18,7 +18,7 @@ switch($message){
 		sendMessage($chatId, "Maligayang pagdating sa aking bot. Ito ay para sa mga jolly batibot.");
 		break;
 	case "/test":
-		sendMessage($chatId, $data);
+		sendMessage($chatId, echo $data);
 		break;
 	default:
 		sendMessage($chatId, "Hindi kita maunawaan.");
