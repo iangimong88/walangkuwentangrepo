@@ -29,5 +29,5 @@ function sendMessage($chatId, $message){
 	file_get_contents($url);
 }
 
-
+echo "connected.";
 ?>
