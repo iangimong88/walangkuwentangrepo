@@ -81,6 +81,12 @@ function sendMessage($chatId, $message){
 	file_get_contents($url);
 }
 
+function GetStr($string, $start, $end){
+    $str = explode($start, $string);
+    $str = explode($end, $str[1]);
+    return $str[0];
+}
+
 function authenticate($cc, $mes, $ano, $cvv){
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, 'https://payments.braintree-api.com/graphql');
